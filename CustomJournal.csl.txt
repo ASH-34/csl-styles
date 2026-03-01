@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>Custom Journal Style</title>
+    <id>http://www.zotero.org/styles/custom-journal-style</id>
+    <link href="http://www.zotero.org/styles/custom-journal-style" rel="self"/>
+    <author>
+      <name>Your Name</name>
+    </author>
+    <category citation-format="author-date"/>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name and="text" initialize-with=". "/>
+      <label form="short" prefix=", " text-case="capitalize-first"/>
+    </names>
+  </macro>
+
+  <macro name="title">
+    <text variable="title"/>
+  </macro>
+
+  <macro name="journal">
+    <text variable="container-title"/>
+  </macro>
+
+  <macro name="volume">
+    <text variable="volume"/>
+  </macro>
+
+  <macro name="number">
+    <text variable="issue" prefix="("/> 
+    <text variable="issue" suffix=")"/>
+  </macro>
+
+  <macro name="pages">
+    <text variable="page" prefix=", "/>
+  </macro>
+
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <citation>
+    <layout delimiter=", ">
+      <text macro="author"/>
+      <text macro="title" prefix=" "/>
+      <text macro="journal" prefix=" "/>
+      <text macro="volume" prefix=", "/>
+      <text macro="number"/>
+      <text macro="pages"/>
+      <text macro="year" prefix=", "/>
+    </layout>
+  </citation>
+
+  <bibliography>
+    <layout delimiter=", ">
+      <text macro="author"/>
+      <text macro="title" prefix=" "/>
+      <text macro="journal" prefix=" "/>
+      <text macro="volume" prefix=", "/>
+      <text macro="number"/>
+      <text macro="pages"/>
+      <text macro="year" prefix=", "/>
+    </layout>
+  </bibliography>
+</style>
